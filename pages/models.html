@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PARM - Models</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+  <script src="../lightbox.js" defer></script>
+</head>
+
+<body>
+  <nav class="top-nav" aria-label="Top navigation">
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="models.html" class="active">Models</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <img src="../images/PARM Logo (Transparent).gif" alt="PARM Logo" class="nav-logo">
+  </nav>
+
+<header>
+  <div>
+    <h1 class="page-title">Models</h1>
+  </div>
+</header>
+
+<section class="header-strip">
+  <p>Explore models,Navigate Maps,Interact with Datasets, and learn about Spatial Context.</p>
+</section>
+
+<main>
+  <section class="tabs-section tabs-header" aria-labelledby="tabs-heading">
+    <div class="tabs" role="tablist" aria-label="Main tabs">
+      <button class="tab-button active" data-tab="tab1" role="tab" aria-selected="true">Overview</button>
+      <button class="tab-button" data-tab="tab2" role="tab" aria-selected="false">Models</button>
+      <button class="tab-button" data-tab="tab3" role="tab" aria-selected="false">Datasets</button>
+      <button class="tab-button" data-tab="tab4" role="tab" aria-selected="false">Maps</button>
+    </div>
+  </section>
+
+  <section class="tab-content">
+      <div id="tab1" class="tab-pane active" role="tabpanel">
+        <h3>Project Background</h3>
+        <p>The PARM project currently exists as a physical installation that visualises spatial data through projection. This web platform serves as a digital companion, extending the project's reach and interactivity.</p>
+        <p>Our goal is to provide an online interface where users can:</p>
+        <ul class="content-list">
+            <li>-Explore digital versions of PARM models.</li>
+            <li>-Interact with spatial datasets.</li>
+            <li>-Learn about the spatial context of our research.</li>
+        </ul>
+        <p>The challenge lies in translating an immersive, physical visualisation into an engaging digital experience accessible to broader audiences.</p>
+      </div>
+
+      <div id="tab2" class="tab-pane" role="tabpanel">
+        <h3>Models</h3>
+        <p>Here you'll find model descriptions, versions, and how to run them.</p>
+        
+        <div class="dataset-stack">
+          
+          <!-- Model 1 -->
+          <div class="feature-row">
+            <img src="../images/IMG_5267.jpg" loading="lazy" alt="Model A Visualization" class="feature-image">
+            <div class="feature-text">
+              <h4 class="feature-title">Thermal Mapping Model</h4>
+              <p>This model analyzes the structural composition of urban environments, highlighting areas of the density of the population by color of deeper colors.</p>
+            </div>
+          </div>
+
+          <!-- Model 2 -->
+          <div class="feature-row reverse">
+            <div class="feature-text">
+              <h4 class="feature-title">Structural Integrity Model</h4>
+              <p>This model uses the projector to light up all the details of the actually map in real life.</p>
+            </div>
+            <img src="../images/IMG_5287.jpg" loading="lazy" alt="Model B Visualization" class="feature-image">
+          </div>
+
+          <!-- Model 3 -->
+          <div class="feature-row">
+            <img src="../images/IMG_5313.jpg" loading="lazy" alt="Model C Visualization" class="feature-image">
+            <div class="feature-text">
+              <h4 class="feature-title">projector</h4>
+              <p>Simulating the actual map of the area using computer mapping then to project onto the models.</p>
+            </div>
+          </div>
+
+          <!-- Model 4 -->
+          <div class="feature-row reverse">
+            <div class="feature-text">
+              <h4 class="feature-title">models</h4>
+              <p>This model is molded according to the mapping of the area using scans.</p>
+            </div>
+            <img src="../images/IMG_5331.jpg" loading="lazy" alt="Model D Visualization" class="feature-image">
+          </div>
+
+        </div>
+      </div>
+
+      <div id="tab3" class="tab-pane" role="tabpanel">
+        <h3>Datasets</h3>
+        <p>Links and metadata for spatial datasets used with the models.</p>
+        
+        <div class="dataset-stack">
+          <!-- Pair 1 -->
+          <div class="dataset-pair">
+            <div class="flex-item-standard">
+              <img src="../images/IMG_5267.jpg" loading="lazy" alt="Dataset Visualization 1" class="dataset-image">
+            </div>
+            <div class="flex-item-standard">
+              <canvas id="myChart"></canvas>
+            </div>
+          </div>
+
+          <!-- Pair 2 -->
+          <div class="dataset-pair reverse">
+            <div class="flex-item-standard">
+               <canvas id="lineChart"></canvas>
+            </div>
+            <div class="flex-item-standard">
+              <img src="../images/IMG_5268.jpg" loading="lazy" alt="Dataset Visualization 2" class="dataset-image">
+            </div>
+          </div>
+
+          <!-- Pair 3 -->
+           <div class="dataset-pair">
+            <div class="flex-item-standard">
+              <img src="../images/IMG_5269.jpg" loading="lazy" alt="Dataset Visualization 3" class="dataset-image">
+            </div>
+            <div class="pie-chart-container">
+              <canvas id="pieChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="tab4" class="tab-pane" role="tabpanel">
+        <h3>Maps</h3>
+        <p>Interactive map previews and geographic context information.</p>
+        <div id="map" class="map-container"></div>
+      </div>
+    </section>
+</main>
+
+<footer>
+  <div class="site-footer">
+    <div class="footer-content">
+      <div class="footer-section about">
+        <h3>About PARM</h3>
+        <p>Explore models, Navigate Maps, Interact with Datasets, and learn about Spatial Context.</p>
+      </div>
+      <div class="footer-section links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="models.html">Models</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section contact">
+        <h3>Contact Us</h3>
+        <p>Email: info@parm.com</p>
+        <p>Phone: +1 234 567 890</p>
+      </div>
+      <div class="footer-section social">
+        <h3>Follow Us</h3>
+        <div class="social-links">
+          <a href="#">Facebook</a>
+          <a href="#">Twitter</a>
+          <a href="#">LinkedIn</a>
+          <a href="#">Instagram</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 PARM. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+    const buttons = document.querySelectorAll('.tab-button');
+    const panes = document.querySelectorAll('.tab-pane');
+    let map = null;
+
+    /* Tab Switch Event Logic (W3Schools, 2024) */
+    // Logic: Toggles validity of ARIA attributes and active classes for accessibility and display.
+    // Handles swapping displayed content without page reloads.
+    function activate(button){
+      const tabId = button.getAttribute('data-tab');
+
+      buttons.forEach(b => {
+        const selected = (b === button);
+        b.classList.toggle('active', selected);
+        b.setAttribute('aria-selected', selected ? 'true' : 'false');
+      });
+
+      panes.forEach(p => p.classList.toggle('active', p.id === tabId));
+      
+      /* Leaflet Map Lazy Initialization (LeafletJS Docs, 2024) */
+      // Problem Solved: Maps often render incorrectly if initialized inside a hidden div (display: none).
+      // Solution: Initialize map only when the tab becomes visible. Invalidating size fixes layout glitches.
+      if (tabId === 'tab4') {
+        if (!map) {
+          map = L.map('map').setView([51.505, -0.09], 13);
+          L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+              maxZoom: 19,
+              attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+          }).addTo(map);
+        } else {
+            // Fixes potential grey tiles issue when container size changes
+             setTimeout(() => { map.invalidateSize(); }, 100); 
+        }
+      }
+    }
+
+    buttons.forEach(btn => btn.addEventListener('click', () => activate(btn)));
+    
+    // Keyboard Navigation for Accessibility (WCAG Compliance)
+    // Allows users to switch tabs using Arrow Keys and Enter/Space.
+    buttons.forEach((btn, idx) => {
+      btn.addEventListener('keydown', (e) => {
+        if(e.key === 'ArrowRight') { buttons[(idx+1)%buttons.length].focus(); }
+        if(e.key === 'ArrowLeft') { buttons[(idx-1+buttons.length)%buttons.length].focus(); }
+        if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(btn); }
+      });
+    });
+
+    // Chart initialization
+    document.addEventListener('DOMContentLoaded', () => {
+
+      /* Chart Configuration Strategy */
+      // Using Chart.js to visualize distinct urban datasets (population, infrastructure).
+      // Responsive: true ensures charts adapt to mobile screens.
+
+      const randomData = (count, max) => Array.from({length: count}, () => Math.floor(Math.random() * max));
+
+      /* Chart.js Bar Chart configuration (Chart.js Docs, 2024) */
+      // Visualization: Comparative Density Analysis
+      // Bar Chart
+      const ctx = document.getElementById('myChart').getContext('2d');
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Data A', 'Data B'],
+          datasets: [{
+            label: 'Dataset 1',
+            data: [1000, 1609],
+            backgroundColor: [
+              'rgba(255, 99, 132, 0.6)', 
+              'rgba(54, 162, 235, 0.6)'
+            ],
+            borderColor: [
+              'rgba(255, 99, 132, 1)',
+              'rgba(54, 162, 235, 1)'
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: { responsive: true, scales: { y: { beginAtZero: true } } }
+      });
+
+      // Visualization: Historical Growth Trend
+      // Line Chart
+      const ctxLine = document.getElementById('lineChart').getContext('2d');
+      new Chart(ctxLine, {
+        type: 'line',
+        data: {
+          labels: ['Stage 1', 'Stage 2', 'Stage 3'],
+          datasets: [{
+            label: 'Population Growth',
+            data: [1000, 1609, 1744],
+            fill: true,
+            borderColor: 'rgb(75, 192, 192)',
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            tension: 0.1
+          }]
+        },
+        options: { responsive: true }
+      });
+
+      // Visualization: Distribution Breakdown
+      // Pie Chart
+      const ctxPie = document.getElementById('pieChart').getContext('2d');
+      new Chart(ctxPie, {
+        type: 'pie',
+        data: {
+          labels: ['1000', '1609', '1744', '1844'],
+          datasets: [{
+            label: 'Distribution',
+            data: [1000, 1609, 1744, 1844],
+            backgroundColor: [
+              'rgb(255, 99, 132)',
+              'rgb(54, 162, 235)',
+              'rgb(255, 205, 86)',
+              'rgb(75, 192, 192)'
+            ],
+            hoverOffset: 4
+          }]
+        },
+        options: { responsive: true }
+      });
+    });
+</script>
+</body>
+</html>
