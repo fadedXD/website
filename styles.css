@@ -1,0 +1,366 @@
+    body{
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+        background: rgb(35, 35, 35);
+        color: white;
+    }
+    header{
+      background: rgba(14, 3, 112, 0.436);
+      margin: 0;
+      padding: 0;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+    header > div:first-child {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1% 1% 1% 2%;
+    }
+    header > div:last-child {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1% 2% 1% 1%;
+    }
+    div{
+        margin-bottom: 1rem;
+    }
+    section {
+        margin-bottom: 2rem;
+    }
+    /* =========================================
+       Navigation Styles
+       ========================================= */
+    nav ul{
+        list-style: none;
+        padding: 0;
+        display: flex;
+        gap: 1rem;
+    }
+    nav a{
+      text-decoration: none;
+      color: #0077cc;
+    }
+    /* Sticky Navigation Logic (W3Schools, 2024):
+       Keeps the nav bar fixed at the top of the viewport when scrolling.
+       The z-index ensures it stays above other content like images/charts. */
+    .top-nav{
+      position: sticky;
+      top: 0;
+      background: rgba(10,10,30,0.9);
+      z-index: 220;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+      list-style-type: none;
+    }
+    .nav-logo {
+      height: 40px;
+      width: auto;
+    }
+    li{
+       display: inline-block;
+       margin: 0 20px 0;
+    }
+    .top-nav ul{ gap: 1.25rem; }
+    .top-nav a{ 
+      color: #cfeeff; 
+      font-weight: 600; 
+      text-decoration: none;
+    }
+    .top-nav a:hover,
+    .top-nav a.active {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+    .tabs-section {
+      padding: 0;
+    }
+    section.lower {
+      padding: 20px;
+      display: flex;
+      flex-direction: row;
+    }
+    section.lower div {
+      display: inline-block;
+      background: rgba(255,255,255,0.03);
+      margin: auto;
+    }
+    .tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 0;
+      flex-wrap: nowrap;
+      align-items: center;
+    }
+    .tab-button {
+      background: rgba(255,255,255,0.06);
+      border: 0.1em solid rgba(255,255,255,0.08);
+      border-radius: 100vw;
+      cursor: pointer;
+      color: white;
+      padding: 0.75em 3em;
+      cursor: pointer;
+      border-radius: 6px;
+      font-weight: 600;
+      white-space: nowrap;
+      font-size: 14px;
+      transition: background-color 250ms;
+    }
+    .tab-button:hover { filter: brightness(1.05); }
+    .tab-button.active {
+      background: rgba(0,119,204,0.15);
+      border-color: rgba(0,119,204,0.4);
+      color: #7fd1ff;
+    }
+    .tab-content { background: rgba(255,255,255,0.03); padding: 16px; border-radius: 8px; margin-top: 2rem; }
+    .tab-pane { display: none; }
+    .tab-pane.active { display: block; }
+    #tabs-heading { display: none; }
+
+    /* Footer Styles */
+    .site-footer {
+      background-color: rgba(10, 10, 30, 0.95);
+      color: #fff;
+      padding: 40px 20px 20px;
+      margin-top: 40px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      gap: 20px;
+    }
+    
+    .footer-section {
+      flex: 1;
+      min-width: 200px;
+      margin-bottom: 20px;
+    }
+    
+    .footer-section h3 {
+      color: #cfeeff;
+      margin-bottom: 15px;
+      font-size: 1.2rem;
+    }
+    
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+      display: block; /* Override flex from nav ul if needed, though nav ul selector is specific */
+    }
+    
+    .footer-section ul li {
+      display: block; /* Override global li inline-block */
+      margin: 5px 0;
+    }
+    
+    .footer-section a {
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .footer-section a:hover {
+      color: #fff;
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+    
+    .footer-bottom a {
+      color: #aaa;
+      text-decoration: none;
+    }
+    
+    .footer-bottom a:hover {
+      color: #fff;
+    }
+    
+    .social-links a {
+      display: inline-block;
+      margin-right: 10px;
+      background: rgba(255,255,255,0.1);
+      padding: 5px 10px;
+      border-radius: 4px;
+    }
+
+    /* =========================================
+       Responsive Design (Media Queries)
+       ========================================= */
+    /* Adjusts layout for screens smaller than 768px (Mobile/Tablet) */
+    @media (max-width: 768px) {
+      /* Stack header elements vertically on mobile */
+      header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+      }
+      
+      .top-nav {
+        position: relative; /* Unstick on mobile if needed, or keep sticky */
+        padding: 10px;
+      }
+
+      /* Convert horizontal nav to vertical stack */
+      .top-nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-section {
+        margin-bottom: 30px;
+      }
+
+      .tabs {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      .tab-button {
+        width: 100%;
+        margin-bottom: 5px;
+      }
+    }
+/* =========================================
+   Lightbox (Modal) Styles
+   ========================================= */
+/* Hidden by default, covers entire screen with semi-transparent black */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.9);
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s;
+}
+
+/* Image container within the modal */
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 5px;
+  animation: zoomIn 0.3s;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  z-index: 1001;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@keyframes zoomIn {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0}
+  to {opacity: 1}
+}
+
+/* Utility Classes */
+.page-title { margin: 0; padding-left: 8px; }
+.hero-section {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 40px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/IMG_5327.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  margin-top: 2rem;
+  position: relative;
+}
+.hero-content { flex: 1; }
+.hero-image { flex: 1; display: flex; justify-content: center; }
+.hero-image img { max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+
+.header-strip { display: block; margin-bottom: 0; }
+.description-section { background: rgba(14, 3, 112, 0.436); padding: 1% 2%; margin: 0; }
+
+.content-list { margin-bottom: 20px; }
+.gallery-grid { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px; }
+.gallery-image { max-width: 300px; height: auto; border-radius: 4px; }
+
+.feature-row { display: flex; gap: 2rem; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; }
+.feature-row.reverse { flex-wrap: wrap-reverse; }
+.feature-image { width: 100%; max-width: 500px; height: auto; border-radius: 4px; box-shadow: 0 4px 6px rgba(0,0,0,0.2); }
+
+.dataset-stack { display: flex; flex-direction: column; gap: 4rem; margin-top: 2rem; }
+.dataset-pair { display: flex; flex-wrap: wrap; gap: 2rem; align-items: center; }
+.dataset-pair.reverse { flex-wrap: wrap-reverse; }
+.dataset-image { width: 100%; border-radius: 4px; box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
+.pie-chart-container { flex: 1; min-width: 300px; max-width: 400px; margin: 0 auto; }
+.flex-item-standard { flex: 1; min-width: 300px; }
+.map-container { height: 400px; width: 100%; margin-top: 10px; border-radius: 4px; }
+
+.contact-container { padding: 2rem; max-width: 800px; margin: 0 auto; }
+.form-group { margin-bottom: 1.5rem; }
+.form-label { display: block; margin-bottom: 0.5rem; }
+.form-input { width: 100%; padding: 0.8rem; border-radius: 4px; border: 1px solid #ccc; background: #fff; color: #333; }
+.form-error { color: #ff6b6b; font-size: 0.9em; display: none; }
+.form-success { display: none; background: rgba(0, 255, 0, 0.1); padding: 10px; margin-top: 10px; border-radius: 4px; }
+
+.cta-button {
+  display: inline-block;
+  background: #0077cc;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+.cta-button:hover { background: #005fa3; }
+
+.feature-text { flex: 1; min-width: 300px; }
+.feature-title { margin-top: 0; color: #cfeeff; }
